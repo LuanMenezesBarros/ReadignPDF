@@ -20,20 +20,14 @@
             "outputPath": "dist/readign-pdf",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": [{
+              "glob": "**/*",
+              "input": "public"
+            }],
+            "styles": ["src/styles.scss"],
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -43,6 +37,10 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "budgets": [
                 {
                   "type": "initial",
@@ -58,6 +56,10 @@
               "outputHashing": "all"
             },
             "development": {
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.ts"
+              }],
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -89,15 +91,11 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": [{
+              "glob": "**/*",
+              "input": "public"
+            }],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
